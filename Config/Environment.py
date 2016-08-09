@@ -1,4 +1,3 @@
-from selenium import webdriver
 from peewee import *
 
 ENV_PATH = __file__\
@@ -29,23 +28,6 @@ def env(variable_name):
     """ Get the corresponding environment variable. """
 
     return RESOURCE_LOADER.get(variable_name)
-
-
-def env_driver(browser):
-    """ Return the web driver. """
-
-    the_driver = False
-    if browser == 'chrome':
-        the_driver = webdriver.Chrome
-    elif browser == 'firefox':
-        the_driver = webdriver.Firefox
-    elif browser == 'safari':
-        the_driver = webdriver.Safari
-    elif browser == 'phantomjs':
-        the_driver = webdriver.PhantomJS
-    elif browser == 'opera':
-        the_driver = webdriver.Opera
-    return the_driver
 
 
 def get_database(db_type):
